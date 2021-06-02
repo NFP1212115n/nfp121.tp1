@@ -1,5 +1,5 @@
 package question3;
-
+import java.text.Normalizer;
 /**
  * NFP121 TpIntroduction, usage de BlueJ et du "Submitter".
  * 
@@ -14,6 +14,8 @@ public class AuditeurCNAM {
     private String prenom;
     /** l'attribut matricule de chaque auditeur. */
     private String matricule;
+    
+    
 
     /**
      * "Création", le constructeur d'un auditeur avec son nom, son prénom et son
@@ -45,7 +47,27 @@ public class AuditeurCNAM {
      *         homonymes...
      */
     public String login() {
-        return "";// à compléter
+        String nom6;
+        String prenom1;
+        nom = nom.replaceAll("[^a-zA-Z0-9]", "_");
+        prenom = prenom.replaceAll("[^a-zA-Z0-9]", "_");
+        
+        if (nom.length() > 6) 
+            {
+            nom6 = nom.substring(0, 6);
+            nom6 = nom6.toLowerCase();
+            } 
+        else
+            {
+            nom6 = nom;
+            nom6 = nom6.toLowerCase();
+            }
+        prenom1 = prenom.substring(0, 1);
+        prenom1 = prenom1.toLowerCase();
+        
+        
+        return (nom6 + "_" + prenom1);
+        // à compléter
     }
 
     /**
@@ -54,7 +76,9 @@ public class AuditeurCNAM {
      * @return son nom
      */
     public String nom() {
-        return null;// à compléter
+        //nom = nom.replaceAll("[^a-zA-Z0-9]", "_");
+        //nom.toLowerCase();
+        return nom;// it was said that we only need to change it in the login
     }
 
     /**
@@ -63,7 +87,9 @@ public class AuditeurCNAM {
      * @return son prénom
      */
     public String prenom() {
-        return null;// à compléter
+        //prenom = prenom.replaceAll("[^a-zA-Z0-9]", "_");  
+        //prenom.toLowerCase();
+        return prenom;// it was said that we only need to change it in the login
     }
 
     /**
@@ -72,7 +98,7 @@ public class AuditeurCNAM {
      * @return son matricule
      */
     public String matricule() {
-        return null;// à compléter
+        return matricule;// à compléter
     }
 
     /**
